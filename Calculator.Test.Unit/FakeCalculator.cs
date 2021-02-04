@@ -11,7 +11,8 @@ namespace Calculator.Test.Unit
         public double Add(double a, double b)
         {
             IsActivated = true;
-            return a + b;
+            double result = a + b;
+            return result;
         }
     }
 }
