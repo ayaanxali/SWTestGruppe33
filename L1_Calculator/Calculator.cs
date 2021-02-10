@@ -29,9 +29,9 @@ namespace L1_Calculator
             return a * b;
         }
 
-        public double Power(double x, double exp)
+        public double Power(double x, double y)
         {
-            return Math.Pow(x, exp);
+            return Math.Pow(x, y);
         }
 
     }

@@ -14,53 +14,60 @@ namespace Calculator.Test.Unit
         public void Setup()
         {
             uut = new L1_Calculator.Calculator();
-            //calculator = new FakeCalculator();
+            //calculator = new FakeCalculator();//ready for expansion of code
         }
 
-        [Test]
-        public void Add_DoAdd_Method()
+        [TestCase(-6,-2,-4)]
+        [TestCase(5, 2, 3)]
+        [TestCase(-1, -4, 3)]
+        public void Add_DoAddAWithB_IsExpectedResult(double ExpectedResult, double InputA, double InputB)
         {
-            double value = uut.Add(2, 4);
+            double value = uut.Add(InputA, InputB);
 
-            Assert.That(value,Is.EqualTo(6));
+            Assert.That(value,Is.EqualTo(ExpectedResult));
         }
 
-        [TestCase(5, 1)]
-        public void Add_DoAddAWithB_1IsExpectedResult(int var, double var2)
-        {
-            double value = uut.Add(2, 3);
+        //[TestCase(5, 2,3)]
+        //public void Add_DoAddAWithB_1IsExpectedResult(double ExpectedResult, double InputA, double InputB)
+        //{
+        //    double value = uut.Add(InputA, InputB);
 
-            Assert.That(value, Is.EqualTo(var));
-        }
+        //    Assert.That(value, Is.EqualTo(ExpectedResult));
+        //}
 
-        [TestCase(-1, 3)]
-        public void Add_DoAddAWithB_2IsExpectedResult(int var, double var2)
-        {
-            double value = uut.Add(-4, 3);
+        //[TestCase(-1, -4,3)]
+        //public void Add_DoAddAWithB_2IsExpectedResult(double ExpectedResult, double InputA, double InputB)
+        //{
+        //    double value = uut.Add(-4, 3);
 
-            Assert.That(value, Is.EqualTo(var));
-        }
+        //    Assert.That(value, Is.EqualTo(ExpectedResult));
+        //}
         [TestCase(10,4,6)]
+        [TestCase(-10, 4, -14)]
+        [TestCase(-10, -4, -6)]
         public void Subtract_MethodDoSubstractAWithB_IsExpectedResult(double varA,double varB,double expectedResult)
         {
             double value = uut.Subtract(varA, varB);
 
-            //Assert
             Assert.That(value, Is.EqualTo(expectedResult));
         }
-        [Test]
-        public void Test_Multiply_Method()
+        [TestCase(40, 10,4)]
+        [TestCase(-40, 10, -4)]
+        [TestCase(50, -10, -5)]
+        public void Multiply_MethodDoMultiplyAWithB_IsExpectedResult(double ExpectedResult, double InputA, double InputB)
         {
-            double value = uut.Multiply(10, 4);
+            double value = uut.Multiply(InputA, InputB);
 
-            Assert.That(value, Is.EqualTo(40));
+            Assert.That(value, Is.EqualTo(ExpectedResult));
         }
-        [Test]
-        public void Test_Power_Method()
+        [TestCase(8,2,3)]
+        [TestCase(-8, -2, 3)]
+        [TestCase(-0.125, -2, -3)]
+        public void Power_MethodDoPowerAwithB_IsPectedResult(double ExpectedResult, double InputA, double InputB)
         {
-            double value = uut.Power(2, 3);
+            double value = uut.Power(InputA, InputB);
 
-            Assert.That(value, Is.EqualTo(8));
+            Assert.That(value, Is.EqualTo(ExpectedResult));
         }
 
     }
