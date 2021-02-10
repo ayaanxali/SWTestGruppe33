@@ -6,7 +6,7 @@ namespace L1_Calculator
 {
     public interface ICalculator
     {
-        double Add(double a, double b);
+        void Add(double a, double b);
         
     }
 }

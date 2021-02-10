@@ -27,21 +27,6 @@ namespace Calculator.Test.Unit
             Assert.That(value,Is.EqualTo(ExpectedResult));
         }
 
-        //[TestCase(5, 2,3)]
-        //public void Add_DoAddAWithB_1IsExpectedResult(double ExpectedResult, double InputA, double InputB)
-        //{
-        //    double value = uut.Add(InputA, InputB);
-
-        //    Assert.That(value, Is.EqualTo(ExpectedResult));
-        //}
-
-        //[TestCase(-1, -4,3)]
-        //public void Add_DoAddAWithB_2IsExpectedResult(double ExpectedResult, double InputA, double InputB)
-        //{
-        //    double value = uut.Add(-4, 3);
-
-        //    Assert.That(value, Is.EqualTo(ExpectedResult));
-        //}
         [TestCase(10,4,6)]
         [TestCase(-10, 4, -14)]
         [TestCase(-10, -4, -6)]

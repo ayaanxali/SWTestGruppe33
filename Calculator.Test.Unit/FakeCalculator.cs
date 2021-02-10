@@ -8,11 +8,10 @@ namespace Calculator.Test.Unit
     public class FakeCalculator : ICalculator
     {
         public bool IsActivated { get; set; }
-        public double Add(double a, double b)
+        public void Add(double a, double b)
         {
             IsActivated = true;
-            double result = a + b;
-            return result;
+            
         }
     }
 }
