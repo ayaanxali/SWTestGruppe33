@@ -18,7 +18,7 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Test_Add_Method()
+        public void Add_DoAdd_Method()
         {
             double value = uut.Add(2, 4);
 
@@ -29,6 +29,14 @@ namespace Calculator.Test.Unit
         public void Add_DoAddAWithB_1IsExpectedResult(int var, double var2)
         {
             double value = uut.Add(2, 3);
+
+            Assert.That(value, Is.EqualTo(var));
+        }
+
+        [TestCase(-1, 3)]
+        public void Add_DoAddAWithB_2IsExpectedResult(int var, double var2)
+        {
+            double value = uut.Add(-4, 3);
 
             Assert.That(value, Is.EqualTo(var));
         }
