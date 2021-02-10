@@ -13,56 +13,68 @@ namespace L1_Calculator
             Accumulator = 0;
         }
 
-        public void Add(double a, double b)
+        public double Add(double a, double b)
         {
-            Accumulator = a + b;
-           // return Accumulator;
+            return Accumulator = a + b;
         }
 
-        public void Add(double a)
+        public double Add(double a)
         {
             double value = Accumulator;
-            Accumulator = a + value;
+            return Accumulator = a + value;
+            
         }
 
-        public void Subtract(double a, double b)
+        public double Subtract(double a, double b)
         {
-            Accumulator = a - b;
-            //return Accumulator;
+           return Accumulator = a - b;
         }
 
-        public void Subtract(double a)
-        {
-            double value = Accumulator;
-            Accumulator = a - value;
-        }
-
-        public void Multiply(double a, double b)
-        {
-            Accumulator = a * b;
-            //return a * b;
-        }
-
-        public void MultiPly(double a)
+        public double Subtract(double a)
         {
             double value = Accumulator;
-            Accumulator = a * value;
+            return Accumulator = a - value;
         }
 
-        public void Power(double x, double y)
+        public double Multiply(double a, double b)
         {
-            Accumulator = Math.Pow(x, y);
+           return Accumulator = a * b;
         }
 
-        public void Power(double x)
+        public double MultiPly(double a)
         {
             double value = Accumulator;
-            Accumulator =Math.Pow(x, value);
+            return Accumulator = a * value;
         }
 
-        public void Clear()
+        public double Division(double a, double b)
         {
-            Accumulator = 0;
+            if (b == 0)
+                throw new DivideByZeroException();
+
+            return Accumulator = a / b;
+        }
+
+        public double Division(double a)
+        {
+            double value = Accumulator;
+            return Accumulator = a / value;
+        }
+
+        public double Power(double x, double y)
+        {
+            return Accumulator = Math.Pow(x, y);
+        }
+
+        public double Power(double x)
+        {
+            double value = Accumulator;
+           return Accumulator =Math.Pow(x, value);
+        }
+
+        public double Clear()
+        {
+            return Accumulator = 0;
         }
 
     }
