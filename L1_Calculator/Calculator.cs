@@ -20,7 +20,7 @@ namespace L1_Calculator
         public double Add(double a)
         {
             double value = Accumulator;
-            return Accumulator = a + value;
+            return Accumulator = value+a;
             
         }
 
@@ -32,7 +32,7 @@ namespace L1_Calculator
         public double Subtract(double a)
         {
             double value = Accumulator;
-            return Accumulator = a - value;
+            return Accumulator = value-a;
         }
 
         public double Multiply(double a, double b)
@@ -43,13 +43,14 @@ namespace L1_Calculator
         public double MultiPly(double a)
         {
             double value = Accumulator;
-            return Accumulator = a * value;
+            return Accumulator = value*a;
         }
 
         public double Division(double a, double b)
         {
-            if (b == 0)
+            if (b == 0 || a == 0)
                 throw new DivideByZeroException();
+
 
             return Accumulator = a / b;
         }
@@ -57,6 +58,10 @@ namespace L1_Calculator
         public double Division(double a)
         {
             double value = Accumulator;
+
+            if(a == 0)
+                throw new DivideByZeroException();
+
             return Accumulator = value / a;
         }
 
@@ -68,7 +73,7 @@ namespace L1_Calculator
         public double Power(double x)
         {
             double value = Accumulator;
-           return Accumulator =Math.Pow(x, value);
+           return Accumulator =Math.Pow(value,x);
         }
 
         public double Clear()
