@@ -57,7 +57,7 @@ namespace L1_Calculator
         public double Division(double a)
         {
             double value = Accumulator;
-            return Accumulator = a / value;
+            return Accumulator = value / a;
         }
 
         public double Power(double x, double y)
