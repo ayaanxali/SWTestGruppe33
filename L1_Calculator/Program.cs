@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Dynamic;
+using System.Globalization;
 
 namespace L1_Calculator
 {
@@ -14,27 +15,32 @@ namespace L1_Calculator
 
         public static void Run()
         {
-            string inputOperator ="";
-            double tal1, tal2; 
+            
+            double tal1, tal2;
 
+            Console.WriteLine("Dette er en simpel lommeregner");
+            Console.WriteLine(Calculator.Accumulator);
             while (true)
             {
-                Console.WriteLine("Dette er en simpel lommeregner");
-                Console.WriteLine(Calculator.Accumulator);
-                Console.Write("Indtast første tal: {0} ", tal1 = Convert.ToDouble(Console.ReadLine()));
-                Console.WriteLine("Indtast operator: {0}", inputOperator);
-                Console.Write("Indtast andet tal: {0}", tal2 = Convert.ToDouble(Console.ReadLine()));
                 
-                switch (inputOperator)
+                Console.Write("Indtast første tal: \n" );
+                tal1 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Indtast operator: \n");
+                var input3 = Console.ReadKey(true);
+                Console.Write("Indtast andet tal: \n");
+                tal2 = Convert.ToDouble(Console.ReadLine());
+
+
+                switch (input3.KeyChar)
                 {
-                    case "+":
+                    case '+':
 
                         Calculator.Add(tal1, tal2);
                         break;
-                    case "-":
+                    case '-':
                         Calculator.Subtract(tal1, tal2);
                         break;
-                    case "/":
+                    case '/':
                         try
                         {
                             Calculator.Division(tal1, tal2);
@@ -46,16 +52,24 @@ namespace L1_Calculator
                         }
 
                         break;
-                    case "*":
+                    case '*':
                         Calculator.Multiply(tal1, tal2);
                         break;
-                    case "^":
+                    case '^':
                         Calculator.Power(tal1, tal2);
                         break;
+                    case 'c':
+                        Calculator.Clear();
+                        break;
+                        
                 }
 
                 Console.WriteLine("The Result: {0}", Calculator.Accumulator);
-                
+               
+                tal1=Convert.ToDouble(Console.ReadLine());
+                Calculator.Add(tal1);
+                Console.WriteLine("The new result; {0}",Calculator.Accumulator);
+
                 // vi skal have lavet et loop så hvis personen vil fortsætte med at beregne udfra sidste resultat, gør vi videre og benytter overload metoden. og hvis personen benytter clear vender vi tilbage til tidligere metode intil personen afslutter program. 
 
                 // mangler at teste overload metoderne

@@ -4,13 +4,12 @@ using System.Text;
 
 namespace L1_Calculator
 {
-    public class Calculator 
+    public class Calculator
     {
-        public double Accumulator { get; private set; }
+        public double Accumulator { get; private set; } = 0;
 
         public Calculator()
         {
-            Accumulator = 0;
         }
 
         public double Add(double a, double b)
